@@ -16,5 +16,5 @@ urlpatterns = [
     path('actors/<int:actor_id>', views.actors_show, name='actors_show'),
     path('actors/create/', views.ActorCreate.as_view(), name='actors_create'),
     path('actors/<int:pk>/update/', views.ActorUpdate.as_view(), name='actors_update'),
-    path('actors/<int:pk>/delete/', views.ActorDelete.as_view(), name='actors_deleteActor')
+    path('actors/<int:pk>/delete/', views.ActorDelete.as_view(), name='actors_delete')
 ]

@@ -6,13 +6,12 @@
 
 {% for actor in actors %}
     <div>
-        <a href="{% url 'actor_show' actor.id %}">
+        <a href="{% url 'actors_show' actor.id %}">
             <div class="card-content">
                 <span>{{ actor.name }}</span>
-                <p>Color: {{ cattoy.color }}</p>
+                <img src="{{actor.img}}" alt="{{actor.name}}">
                 <p>Gender: {{ actor.gender }}</p>
                 <p>Age: {{ actor.age }}</p>
-                <p>Image: {{ actor.img }}</p>
                 <p>Awards: {{ actor.awards }}</p>
                 <p>Spouse: {{ actor.spouse }}</p>
                 <p>Birth Place: {{ actor.birth_place }}</p>
