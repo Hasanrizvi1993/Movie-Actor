@@ -52,3 +52,9 @@ class Movie_Create(CreateView):
 class Movie_Detail(DetailView):
     model = Movie
     template_name = "movie_detail.html"
+
+class Movie_Update(UpdateView):
+    model = Movie
+    fields = ['title', 'release_year', 'genre', 'img']
+    template_name = "movie_update.html"
+    success_url = "/movies"
