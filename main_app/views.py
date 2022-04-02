@@ -62,3 +62,9 @@ class Movie_Update(UpdateView):
     template_name = "movie_update.html"
     def get_success_url(self):
         return reverse('movie_detail', kwargs={'pk': self.object.pk})
+
+
+class Movie_Delete(DeleteView):
+    model = Movie
+    template_name = "Movie_delete_confirmation.html"
+    success_url = "/movies/"
