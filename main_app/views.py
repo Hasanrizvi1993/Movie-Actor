@@ -1,9 +1,9 @@
+from django.views.generic import DetailView
 from django.shortcuts import render
 from django.views.generic.base import TemplateView# <- View class to handle requests
 from django.http import HttpResponse, HttpResponseRedirect # <- a class to handle sending a type of response
 from .models import Movie
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
-from django.views.generic import DetailView
 from django.views import View # View class to handle requests
 # Create your views here.
 
@@ -49,6 +49,6 @@ class Movie_Create(CreateView):
     template_name = "movie_create.html"
     success_url = "/movies/"
 
-class MovieDetail(DetailView):
+class Movie_Detail(DetailView):
     model = Movie
     template_name = "movie_detail.html"
