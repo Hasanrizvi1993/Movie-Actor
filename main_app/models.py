@@ -1,21 +1,17 @@
 from django.db import models
 
 # Create your models here.
-GENDER_CHOICES = (
-	("f", "female"),
-	("m", "male")
-)
 
 class Movie(models.Model):
 
-    name = models.CharField(max_length=50)
+    title = models.CharField(max_length=50)
+    release_year = models.IntegerField()
+    genre = models.CharField(max_length=100)
     img = models.CharField(max_length=250)
-    age = models.IntegerField()
-    gender = models.CharField(max_length=10, choices = GENDER_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return self.name
+        return self.title
 
     class Meta:
-        ordering = ['name']
+        ordering = ['title']
