@@ -5,6 +5,12 @@ from django.http import HttpResponse, HttpResponseRedirect # <- a class to handl
 from .models import Movie
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
 from django.views import View # View class to handle requests
+from django.urls import reverse
+
+
+
+
+
 # Create your views here.
 
 # Here we will be creating a class called Home and extending it from the View class
@@ -34,27 +40,25 @@ class MovieList(TemplateView):
             context["header"] = "Our Movies"
         return context
 
-# class Movie_Create(CreateView):
-#     model = Movie
-#     fields = ['title', 'release_year', 'genre', 'img']
-#     template_name = "cat_create.html"
-#     def form_valid(self, form):
-#         self.object = form.save(commit=False)
-#         self.object.user = self.request.user
-#         self.object.save()
-#         return HttpResponseRedirect('/movies')
-class Movie_Create(CreateView):
-    model = Movie
-    fields = ['title', 'release_year', 'genre', 'img']
-    template_name = "movie_create.html"
-    success_url = "/movies/"
 
 class Movie_Detail(DetailView):
     model = Movie
     template_name = "movie_detail.html"
 
+
+
+
+class Movie_Create(CreateView):
+    model = Movie
+    fields = ['title', 'release_year', 'genre', 'img']
+    template_name = "movie_create.html"
+    def get_success_url(self):
+        return reverse('movie_detail', kwargs={'pk': self.object.pk})
+
+
 class Movie_Update(UpdateView):
     model = Movie
     fields = ['title', 'release_year', 'genre', 'img']
     template_name = "movie_update.html"
-    success_url = "/movies"
+    def get_success_url(self):
+        return reverse('movie_detail', kwargs={'pk': self.object.pk})
