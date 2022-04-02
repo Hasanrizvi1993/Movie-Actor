@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView# <- View class to handle requests
-from django.http import HttpResponse # <- a class to handle sending a type of response
+from django.http import HttpResponse, HttpResponseRedirect # <- a class to handle sending a type of response
 from .models import Movie
-
+from django.views.generic.edit import DeleteView, CreateView, UpdateView
+from django.views import View # View class to handle requests
 # Create your views here.
 
 # Here we will be creating a class called Home and extending it from the View class
@@ -32,3 +33,17 @@ class MovieList(TemplateView):
             context["header"] = "Our Movies"
         return context
 
+# class Movie_Create(CreateView):
+#     model = Movie
+#     fields = ['title', 'release_year', 'genre', 'img']
+#     template_name = "cat_create.html"
+#     def form_valid(self, form):
+#         self.object = form.save(commit=False)
+#         self.object.user = self.request.user
+#         self.object.save()
+#         return HttpResponseRedirect('/movies')
+class Movie_Create(CreateView):
+    model = Movie
+    fields = ['title', 'release_year', 'genre', 'img']
+    template_name = "movie_create.html"
+    success_url = "/movies/"
