@@ -20,7 +20,12 @@ class MovieList(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        movies = Movie.objects.all()
-        context["movies"] = movies # this is where we add the key into our context object for the view to use
+        title = self.request.GET.get("title")
+        if title != None:
+             # .filter is the sql WHERE statement and name__icontains is doing a search for any name that contains the query param
+            context["movies"] = Movie.objects.filter(name__icontains=title)
+        else:
+            movies = Movie.objects.all()
+            context["movies"] = movies # this is where we add the key into our context object for the view to use
         return context
 
