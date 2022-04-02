@@ -50,10 +50,14 @@ class Movie_Detail(DetailView):
 
 class Movie_Create(CreateView):
     model = Movie
-    fields = ['title', 'release_year', 'genre', 'img']
-    template_name = "movie_create.html"
-    def get_success_url(self):
-        return reverse('movie_detail', kwargs={'pk': self.object.pk})
+    fields = '__all__'
+    success_url = '/movies'
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect('/movies')
 
 
 class Movie_Update(UpdateView):
