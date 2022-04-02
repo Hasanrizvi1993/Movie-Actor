@@ -2,8 +2,8 @@
 {% block content %}
     <h1>Our Movies:</h1>
     {% for movie in movies %}
-    <h3>Name: {{movie.name}}</h3>
-    <h3>Age: {{movie.age}}</h3>
-    <h3>Gender: {{movie.gender}}</h3>
+    <h3>Title: {{movie.title}}</h3>
+    <h3>Release Year: {{movie.release_year}}</h3>
+    <h3>Genre: {{movie.genre}}</h3>
     {% endfor %}
 {% endblock %}
