@@ -17,5 +17,8 @@
     <h3>Release Year: {{movie.release_year}}</h3>
     <h3>Genre: {{movie.genre}}</h3>
     <a href="{% url 'movie_detail' movie.pk %}">Details</a>
+    <p>Added By: 
+        <a href='/user/{{movie.user.username}}'>{{movie.user.username}}</a>
+    </p>
     {% endfor %}
 {% endblock %}

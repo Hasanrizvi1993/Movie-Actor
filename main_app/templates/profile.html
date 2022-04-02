@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>{{ username }}'s collection:</h1>
+
+{% for movie in movies %}
+<a href="/movies/{{ movie.id }}">
+  <h3>Title: {{ movie.title }}</h3>
+</a>
+<div>
+    <a href="{% url 'movie_update' movie.pk %}">Update</a>
+    <a href="{% url 'movie_delete' movie.pk %}">Delete</a>
+</div>
+{% endfor %}
+
+{% endblock %}

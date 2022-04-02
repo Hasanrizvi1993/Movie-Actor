@@ -79,6 +79,6 @@ class Movie_Delete(DeleteView):
 
 def profile(request, username):
     user = User.objects.get(username=username)
-    Movies = Movie.objects.filter(user=user)
+    movies = Movie.objects.filter(user=user)
     return render(request, 'profile.html', {'username': username, 'movies': movies})
 
