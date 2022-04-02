@@ -6,6 +6,7 @@ from .models import Movie
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
 from django.views import View # View class to handle requests
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 
@@ -72,3 +73,12 @@ class Movie_Delete(DeleteView):
     model = Movie
     template_name = "Movie_delete_confirmation.html"
     success_url = "/movies/"
+
+
+
+
+def profile(request, username):
+    user = User.objects.get(username=username)
+    Movies = Movie.objects.filter(user=user)
+    return render(request, 'profile.html', {'username': username, 'movies': movies})
+
