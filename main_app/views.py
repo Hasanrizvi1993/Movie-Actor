@@ -2,7 +2,7 @@ from django.views.generic import DetailView
 from django.shortcuts import render
 from django.views.generic.base import TemplateView# <- View class to handle requests
 from django.http import HttpResponse, HttpResponseRedirect # <- a class to handle sending a type of response
-from .models import Movie
+from .models import Movie, Actor
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
 from django.views import View # View class to handle requests
 from django.urls import reverse
@@ -73,6 +73,40 @@ class Movie_Delete(DeleteView):
     model = Movie
     template_name = "Movie_delete_confirmation.html"
     success_url = "/movies/"
+
+
+
+#ACTOR VIEWS
+
+
+def actors_index(request):
+    actors = Actor.objects.all()
+    return render(request, 'actor_index.html', {'actors': actors})
+
+def cattoys_show(request, actor_id):
+    actor = Actor.objects.get(id=actor_id)
+    return render(request, 'actor_show.html', {'actor': actor})
+
+class ActorCreate(CreateView):
+    model = Actor
+    fields = '__all__'
+    template_name = "actor_form.html"
+    success_url = '/actors'
+
+class ActorUpdate(UpdateView):
+    model = Actor
+    fields = ['name', 'gender', 'age', 'img', 'awards', 'spouse', 'birth_place']
+    template_name = "actor_update.html"
+    success_url = '/actors'
+
+class ActorDelete(DeleteView):
+    model = Actor
+    template_name = "actor_confirm_delete.html"
+    success_url = '/actors'
+
+
+
+
 
 
 
