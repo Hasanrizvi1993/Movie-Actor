@@ -1,0 +1,24 @@
+<!-- templates/cattoy_index.html -->
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Actors List</h1>
+
+{% for actor in actors %}
+    <div>
+        <a href="{% url 'actor_show' actor.id %}">
+            <div class="card-content">
+                <span>{{ actor.name }}</span>
+                <p>Color: {{ cattoy.color }}</p>
+                <p>Gender: {{ actor.gender }}</p>
+                <p>Age: {{ actor.age }}</p>
+                <p>Image: {{ actor.img }}</p>
+                <p>Awards: {{ actor.awards }}</p>
+                <p>Spouse: {{ actor.spouse }}</p>
+                <p>Birth Place: {{ actor.birth_place }}</p>
+            </div>
+        </a>
+    </div>
+{% endfor %}
+
+{% endblock %}
