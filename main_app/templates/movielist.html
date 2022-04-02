@@ -7,9 +7,9 @@
             <input type="submit" value="Search"/>
         </div>
         <!-- this a tag will redirect back to catlist without a query param! be sure to use the "name" you called the route in your main_app/urls.py -->
-<!-- need to add some code for the search bar from django cat_list -->
+        <a href="{% url 'movie_list' %}">Clear Search</a>
     </form>
-    <h1>Our Movies:</h1>
+    <h1>{{header}}</h1>
     {% for movie in movies %}
     <img src="{{movie.img}}" alt="{{movie.title}}">
     <h3>Title: {{movie.title}}</h3>
