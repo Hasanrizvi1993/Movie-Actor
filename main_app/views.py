@@ -83,7 +83,7 @@ def actors_index(request):
     actors = Actor.objects.all()
     return render(request, 'actor_index.html', {'actors': actors})
 
-def cattoys_show(request, actor_id):
+def actors_show(request, actor_id):
     actor = Actor.objects.get(id=actor_id)
     return render(request, 'actor_show.html', {'actor': actor})
 
