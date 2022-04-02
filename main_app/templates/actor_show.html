@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Actor Details</h1>
+
+<div>
+    <div>
+        <span>{{ actor.name }}</span>
+        <p>Gender: {{ actor.gender }}</p>
+        <p>Age: {{ actor.age }}</p>
+        <p>Image: {{ actor.img }}</p>
+        <p>Awards: {{ actor.awards }}</p>
+        <p>Spouse: {{ actor.spouse }}</p>
+        <p>Birth Place: {{ actor.birth_place }}</p>
+    </div>
+    <div>
+        <a href="{% url 'actors_update' actor.id %}">Edit Actor</a>
+        <a href="{% url 'actors_delete' actor.id %}">Delete Actor</a>
+    </div>
+</div>
+{% endblock %}
