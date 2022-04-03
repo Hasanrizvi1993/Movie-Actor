@@ -52,7 +52,7 @@ class Movie_Detail(DetailView):
 class Movie_Create(CreateView):
     model = Movie
     fields = ['title', 'release_year', 'genre', 'img', 'actors']
-    success_url = '/movies'
+    template_name= "movie_create.html"
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
