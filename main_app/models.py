@@ -29,7 +29,7 @@ class Movie(models.Model):
     genre = models.CharField(max_length=100)
     img = models.CharField(max_length=250)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    actor = models.ManyToManyField(Actor)
+    actors = models.ManyToManyField(Actor)
     created_at = models.DateTimeField(auto_now_add=True)
     
     

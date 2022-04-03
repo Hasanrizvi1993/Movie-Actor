@@ -51,7 +51,7 @@ class Movie_Detail(DetailView):
 
 class Movie_Create(CreateView):
     model = Movie
-    fields = '__all__'
+    fields = ['title', 'release_year', 'genre', 'img', 'actors']
     success_url = '/movies'
 
     def form_valid(self, form):
@@ -63,7 +63,7 @@ class Movie_Create(CreateView):
 
 class Movie_Update(UpdateView):
     model = Movie
-    fields = ['title', 'release_year', 'genre', 'img']
+    fields = ['title', 'release_year', 'genre', 'img', 'actors']
     template_name = "movie_update.html"
     def get_success_url(self):
         return reverse('movie_detail', kwargs={'pk': self.object.pk})
@@ -95,8 +95,9 @@ class ActorUpdate(UpdateView):
     model = Actor
     fields = ['name', 'gender', 'age', 'img', 'awards', 'spouse', 'birth_place']
     template_name = "actors_update.html"
-    def get_success_url(self):
-        return reverse('actor_detail', kwargs={'pk': self.object.pk})
+    success_url = '/actors'
+    # def get_success_url(self):
+    #     return reverse('actor_detail', kwargs={'pk': self.object.pk})
 
 
 class ActorDelete(DeleteView):
@@ -105,9 +106,9 @@ class ActorDelete(DeleteView):
     success_url = '/actors'
 
 
-class Actor_Detail(DetailView):
-    model = Actor
-    template_name = "actor_detail.html"
+# class Actor_Detail(DetailView):
+#     model = Actor
+#     template_name = "actor_detail.html"
 
 
 
