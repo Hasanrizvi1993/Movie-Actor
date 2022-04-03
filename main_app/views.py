@@ -77,9 +77,7 @@ class Movie_Delete(DeleteView):
 
 
 #ACTOR VIEWS
-
-
-def actors_index(request):
+def actor_home(request):
     actors = Actor.objects.all()
     return render(request, 'actor_index.html', {'actors': actors})
 
@@ -96,14 +94,20 @@ class ActorCreate(CreateView):
 class ActorUpdate(UpdateView):
     model = Actor
     fields = ['name', 'gender', 'age', 'img', 'awards', 'spouse', 'birth_place']
-    template_name = "actor_update.html"
-    success_url = '/actors'
+    template_name = "actors_update.html"
+    def get_success_url(self):
+        return reverse('actor_detail', kwargs={'pk': self.object.pk})
+
 
 class ActorDelete(DeleteView):
     model = Actor
     template_name = "actor_confirm_delete.html"
     success_url = '/actors'
 
+
+class Actor_Detail(DetailView):
+    model = Actor
+    template_name = "actor_detail.html"
 
 
 
