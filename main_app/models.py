@@ -23,12 +23,14 @@ class Actor(models.Model):
 
 
 #review model
-class Reviews(models.Model):
+class Review(models.Model):
+    review = models.CharField(max_length=100)
     rating = models.FloatField(
     validators=[MinValueValidator(0.0), MaxValueValidator(10.0)],
     )
-    review = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.review
 
 #movie model
 
@@ -40,6 +42,7 @@ class Movie(models.Model):
     img = models.CharField(max_length=250)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     actors = models.ManyToManyField(Actor)
+    reviews = models.ManyToManyField(Review)
     created_at = models.DateTimeField(auto_now_add=True)
     
     
