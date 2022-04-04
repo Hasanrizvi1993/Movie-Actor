@@ -103,7 +103,7 @@ class ActorUpdate(UpdateView):
     success_url = '/actors'
     
 
-
+@method_decorator(login_required, name='dispatch')
 class ActorDelete(DeleteView):
     model = Actor
     template_name = "actor_confirm_delete.html"
