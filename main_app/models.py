@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
@@ -19,6 +20,13 @@ class Actor(models.Model):
 
     def __str__(self):
         return self.name
+
+
+#review model
+class Reviews(models.Model):
+    ratings = models.FloatField()
+    reviews = models.CharField(max_length=100)
+
 
 #movie model
 
