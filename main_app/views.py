@@ -51,7 +51,7 @@ class Movie_Detail(DetailView):
 
 
 
-
+@method_decorator(login_required, name='dispatch')
 class Movie_Create(CreateView):
     model = Movie
     fields = ['title', 'release_year', 'genre', 'img', 'actors']
@@ -63,7 +63,7 @@ class Movie_Create(CreateView):
         self.object.save()
         return HttpResponseRedirect('/movies')
 
-
+@method_decorator(login_required, name='dispatch')
 class Movie_Update(UpdateView):
     model = Movie
     fields = ['title', 'release_year', 'genre', 'img', 'actors']
@@ -71,7 +71,7 @@ class Movie_Update(UpdateView):
     def get_success_url(self):
         return reverse('movie_detail', kwargs={'pk': self.object.pk})
 
-
+@method_decorator(login_required, name='dispatch')
 class Movie_Delete(DeleteView):
     model = Movie
     template_name = "Movie_delete_confirmation.html"
@@ -88,19 +88,20 @@ def actors_show(request, actor_id):
     actor = Actor.objects.get(id=actor_id)
     return render(request, 'actor_show.html', {'actor': actor})
 
+@method_decorator(login_required, name='dispatch')
 class ActorCreate(CreateView):
     model = Actor
     fields = '__all__'
     template_name = "actor_form.html"
     success_url = '/actors'
 
+@method_decorator(login_required, name='dispatch')
 class ActorUpdate(UpdateView):
     model = Actor
     fields = ['name', 'gender', 'age', 'img', 'awards', 'spouse', 'birth_place']
     template_name = "actors_update.html"
     success_url = '/actors'
-    # def get_success_url(self):
-    #     return reverse('actor_detail', kwargs={'pk': self.object.pk})
+    
 
 
 class ActorDelete(DeleteView):
@@ -118,7 +119,7 @@ class ActorDelete(DeleteView):
 
 
 
-
+@login_required
 def profile(request, username):
     user = User.objects.get(username=username)
     movies = Movie.objects.filter(user=user)
