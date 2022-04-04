@@ -24,8 +24,10 @@ class Actor(models.Model):
 
 #review model
 class Reviews(models.Model):
-    ratings = models.FloatField()
-    reviews = models.CharField(max_length=100)
+    rating = models.FloatField(
+    validators=[MinValueValidator(0.0), MaxValueValidator(10.0)],
+    )
+    review = models.CharField(max_length=100)
 
 
 #movie model
