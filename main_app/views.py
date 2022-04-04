@@ -1,5 +1,5 @@
-from django.views.generic import DetailView
 from django.shortcuts import render
+from django.views.generic import DetailView
 from django.views.generic.base import TemplateView# <- View class to handle requests
 from django.http import HttpResponse, HttpResponseRedirect # <- a class to handle sending a type of response
 from .models import Movie, Actor
@@ -13,10 +13,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
 
-
-
 # Create your views here.
-
 # Here we will be creating a class called Home and extending it from the View class
 class Home(TemplateView):
     template_name = "home.html"
@@ -24,7 +21,6 @@ class Home(TemplateView):
 #about page
 class About(TemplateView):
     template_name = "about.html"
-
 
 #movie
 class MovieList(TemplateView):
@@ -48,8 +44,6 @@ class MovieList(TemplateView):
 class Movie_Detail(DetailView):
     model = Movie
     template_name = "movie_detail.html"
-
-
 
 @method_decorator(login_required, name='dispatch')
 class Movie_Create(CreateView):
@@ -83,8 +77,6 @@ def profile(request, username):
     movies = Movie.objects.filter(user=user)
     return render(request, 'profile.html', {'username': username, 'movies': movies})
 
-
-
 #ACTOR VIEWS
 def actor_home(request):
     actors = Actor.objects.all()
@@ -107,19 +99,12 @@ class ActorUpdate(UpdateView):
     fields = ['name', 'gender', 'age', 'img', 'awards', 'spouse', 'birth_place']
     template_name = "actors_update.html"
     success_url = '/actors'
-    
 
 @method_decorator(login_required, name='dispatch')
 class ActorDelete(DeleteView):
     model = Actor
     template_name = "actor_confirm_delete.html"
     success_url = '/actors'
-
-
-# class Actor_Detail(DetailView):
-#     model = Actor
-#     template_name = "actor_detail.html"
-
 
 # django auth
 def signup_view(request):
