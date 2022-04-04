@@ -77,6 +77,12 @@ class Movie_Delete(DeleteView):
     template_name = "Movie_delete_confirmation.html"
     success_url = "/movies/"
 
+@login_required
+def profile(request, username):
+    user = User.objects.get(username=username)
+    movies = Movie.objects.filter(user=user)
+    return render(request, 'profile.html', {'username': username, 'movies': movies})
+
 
 
 #ACTOR VIEWS
@@ -118,12 +124,6 @@ class ActorDelete(DeleteView):
 
 
 
-
-@login_required
-def profile(request, username):
-    user = User.objects.get(username=username)
-    movies = Movie.objects.filter(user=user)
-    return render(request, 'profile.html', {'username': username, 'movies': movies})
 
 
 # django auth
