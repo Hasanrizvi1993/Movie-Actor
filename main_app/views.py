@@ -121,11 +121,6 @@ class ActorDelete(DeleteView):
 #     template_name = "actor_detail.html"
 
 
-
-
-
-
-
 # django auth
 def signup_view(request):
     if request.method == 'POST':
@@ -143,7 +138,7 @@ def signup_view(request):
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect('/cats')
+    return HttpResponseRedirect('/movies')
 
 def login_view(request):
      # if post, then authenticate (user submitted username and password)

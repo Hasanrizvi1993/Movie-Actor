@@ -6,17 +6,17 @@
 
 {% for actor in actors %}
     <div>
-        <a href="{% url 'actors_show' actor.id %}">
+        <a href="{% url 'actors_show' actor.id %}">{{ actor.name }} details</a>
             <div class="card-content">
-                <span>{{ actor.name }}</span>
                 <img src="{{actor.img}}" alt="{{actor.name}}">
+                <span>{{ actor.name }}</span>
                 <p>Gender: {{ actor.gender }}</p>
                 <p>Age: {{ actor.age }}</p>
                 <p>Awards: {{ actor.awards }}</p>
                 <p>Spouse: {{ actor.spouse }}</p>
                 <p>Birth Place: {{ actor.birth_place }}</p>
             </div>
-        </a>
+        
     </div>
 {% endfor %}
 

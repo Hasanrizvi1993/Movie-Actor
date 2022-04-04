@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static 'styles/styles.css' %}" />
     <script src="{% static 'scripts/app.js' %}" defer></script>
 
-    <title>Movie-Actor</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
   <nav>
