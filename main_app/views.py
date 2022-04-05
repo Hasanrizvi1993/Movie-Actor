@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import DetailView
 from django.views.generic.base import TemplateView# <- View class to handle requests
 from django.http import HttpResponse, HttpResponseRedirect # <- a class to handle sending a type of response
-from .models import Movie, Actor
+from .models import Movie, Actor, Review
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
 from django.views import View # View class to handle requests
 from django.urls import reverse
@@ -105,6 +105,10 @@ class ActorDelete(DeleteView):
     model = Actor
     template_name = "actor_confirm_delete.html"
     success_url = '/actors'
+
+#review views
+
+
 
 # django auth
 def signup_view(request):

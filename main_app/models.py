@@ -24,13 +24,13 @@ class Actor(models.Model):
 
 #review model
 class Review(models.Model):
-    review = models.CharField(max_length=100)
+    review_content = models.CharField(max_length=100)
     rating = models.FloatField(
     validators=[MinValueValidator(0.0), MaxValueValidator(10.0)],
-    )
+    )       
 
     def __str__(self):
-        return self.review
+        return self.review_content
 
 #movie model
 
