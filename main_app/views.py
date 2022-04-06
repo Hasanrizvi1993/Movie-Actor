@@ -1,6 +1,6 @@
 from dataclasses import field, fields
 from re import template
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView
 from django.views.generic.base import TemplateView# <- View class to handle requests
 from django.http import HttpResponse, HttpResponseRedirect # <- a class to handle sending a type of response
@@ -13,6 +13,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+
 
 
 # Create your views here.
@@ -115,7 +116,9 @@ class AddReviewView(CreateView):
     fields = '__all__'
     success_url = '/movies/'
 
-
+#like views
+def LikeView(request, pk):
+    
 
 # django auth
 def signup_view(request):
