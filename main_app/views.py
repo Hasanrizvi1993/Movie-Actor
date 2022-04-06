@@ -113,6 +113,7 @@ class AddReviewView(CreateView):
     model = Review
     template_name = "add_review.html"
     fields = '__all__'
+    success_url = '/movies/'
 
 
 

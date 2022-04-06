@@ -23,10 +23,10 @@
     {% endfor %}
     <h2>Reviews</h2>
     {% if not movie.reviews.all %}
-        No reviews Yet...<a href="#">
-        Add one</a>
+        No reviews Yet...<a href="{% url 'add_review' movie.pk %}">
+        Add Review</a>
         {% else %}
-        <a href="">Add Review </a>
+        <a href="{% url 'add_review' movie.pk %}">Add Review </a>
         <br/>
         {% for review in movie.reviews.all %}
             <p>Reviews: {{ review.review_content }}</p>

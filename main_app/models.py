@@ -33,7 +33,6 @@ class Movie(models.Model):
     img = models.CharField(max_length=250)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     actors = models.ManyToManyField(Actor)
-    # reviews = models.ManyToManyField(Review)
     created_at = models.DateTimeField(auto_now_add=True)
     
     

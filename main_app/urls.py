@@ -17,7 +17,7 @@ urlpatterns = [
     path('actors/create/', views.ActorCreate.as_view(), name='actors_create'),
     path('actors/<int:pk>/update/', views.ActorUpdate.as_view(), name='actors_update'),
     path('actors/<int:pk>/delete/', views.ActorDelete.as_view(), name='actors_delete'),
-    #Review Routes
+    #Review Routes   
     path('movies/<int:pk>/review', views.AddReviewView.as_view(), name="add_review"),
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
