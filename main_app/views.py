@@ -1,3 +1,5 @@
+from dataclasses import field, fields
+from re import template
 from django.shortcuts import render
 from django.views.generic import DetailView
 from django.views.generic.base import TemplateView# <- View class to handle requests
@@ -107,9 +109,10 @@ class ActorDelete(DeleteView):
     success_url = '/actors'
 
 #review views
-
-
-
+class AddReviewView(CreateView):
+    model = Review
+    template_name = "add_review.html"
+    fields = '__all__'
 
 
 
