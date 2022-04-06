@@ -22,15 +22,6 @@ class Actor(models.Model):
         return self.name
 
 
-#review model
-class Review(models.Model):
-    review_content = models.CharField(max_length=100)
-    rating = models.FloatField(
-    validators=[MinValueValidator(0.0), MaxValueValidator(10.0)],
-    )       
-
-    def __str__(self):
-        return self.review_content
 
 #movie model
 
@@ -42,7 +33,7 @@ class Movie(models.Model):
     img = models.CharField(max_length=250)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     actors = models.ManyToManyField(Actor)
-    reviews = models.ManyToManyField(Review)
+    # reviews = models.ManyToManyField(Review)
     created_at = models.DateTimeField(auto_now_add=True)
     
     
@@ -52,3 +43,13 @@ class Movie(models.Model):
     class Meta:
         ordering = ['title']
 
+#review model
+class Review(models.Model):
+    movie = models.ForeignKey(Movie, related_name="reviews", on_delete=models.CASCADE)
+    review_content = models.CharField(max_length=100)
+    rating = models.FloatField(
+    validators=[MinValueValidator(0.0), MaxValueValidator(10.0)],
+    )       
+
+    def __str__(self):
+        return '%s - %s' % (self.movie, self) 

@@ -9,6 +9,7 @@
     <img src="{{movie.img}}" alt="{{movie.title}}" />
     <h3>Release Year: {{movie.release_year}}</h3>
     <h3>Genre: {{movie.genre}}</h3>
+    <a href="{% url 'review_create' %}">Add Movie Review</a>
     {% for actor in movie.actors.all %}
         <h1>Actor</h1>
         <img src="{{actor.img}}" alt="{{actor.name}}" />
@@ -20,7 +21,8 @@
         <div>Birthplace: {{actor.birth_place}}</div>
     {% empty %}
         <div>sorry no actors listed :/</div>
-    {% endfor %}   
+    {% endfor %}
+   
 </div>
 
 {% endblock %}

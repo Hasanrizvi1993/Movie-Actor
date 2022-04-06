@@ -18,9 +18,7 @@ urlpatterns = [
     path('actors/<int:pk>/update/', views.ActorUpdate.as_view(), name='actors_update'),
     path('actors/<int:pk>/delete/', views.ActorDelete.as_view(), name='actors_delete'),
     #Review Routes
-    # path('reviews/create', views.ReviewCreate.as_view(), name='reviews_create'),
-    
-    
+
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
     path('signup/', views.signup_view, name='signup'),

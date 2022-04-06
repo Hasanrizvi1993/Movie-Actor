@@ -110,6 +110,9 @@ class ActorDelete(DeleteView):
 
 
 
+
+
+
 # django auth
 def signup_view(request):
     if request.method == 'POST':
