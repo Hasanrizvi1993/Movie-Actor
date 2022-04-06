@@ -52,4 +52,4 @@ class Review(models.Model):
     )       
 
     def __str__(self):
-        return '%s - %s' % (self.movie, self) 
+        return '%s - %s' % (self.movie, self.review_content) 
