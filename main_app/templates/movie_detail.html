@@ -11,7 +11,10 @@
     <h3>Genre: {{movie.genre}}</h3>
     <br/><br/>
     <hr>
-    <form action="{% url 'like_movie' movie.pk %}"
+    <form action="{% url 'like_movie' movie.pk %}" method="POST">
+        {% csrf_token %}
+        <button type="submit", name="movie_id", value="{{ movie.id }}", class="btn btn-primary btn-sm">Like</button>
+    </form>
 
 
     {% for actor in movie.actors.all %}
