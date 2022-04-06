@@ -47,6 +47,13 @@ class MovieList(TemplateView):
 class Movie_Detail(DetailView):
     model = Movie
     template_name = "movie_detail.html"
+#addtion to movie_detail for like functionality
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        stuff = get_object_or_404(Movie, id=self.kwargs['pk'])
+        total_likes = stuff.total_likes()
+        context["total_likes"] = total_likes
+        return context
 
 @method_decorator(login_required, name='dispatch')
 class Movie_Create(CreateView):
@@ -116,10 +123,6 @@ class AddReviewView(CreateView):
     fields = '__all__'
     success_url = '/movies/'
 
-#like views
-def LikeView(request, pk):
-    
-
 # django auth
 def signup_view(request):
     if request.method == 'POST':
@@ -159,4 +162,10 @@ def login_view(request):
     else: # it was a get request so send the emtpy login form
         # form = LoginForm()
         form = AuthenticationForm()
-        return render(request, 'login.html', {'form': form}) 
+        return render(request, 'login.html', {'form': form})
+
+#like views
+def LikeView(request, pk):
+    movie = get_object_or_404(Movie, id=request.POST.get('movie_id'))
+    movie.likes.add(request.user)
+    return HttpResponseRedirect(reverse('movie_detail', args=[str(pk)]))
