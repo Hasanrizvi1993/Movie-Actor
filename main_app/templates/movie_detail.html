@@ -9,7 +9,6 @@
     <img src="{{movie.img}}" alt="{{movie.title}}" />
     <h3>Release Year: {{movie.release_year}}</h3>
     <h3>Genre: {{movie.genre}}</h3>
-    <a href="{% url 'review_create' %}">Add Movie Review</a>
     {% for actor in movie.actors.all %}
         <h1>Actor</h1>
         <img src="{{actor.img}}" alt="{{actor.name}}" />
@@ -22,7 +21,16 @@
     {% empty %}
         <div>sorry no actors listed :/</div>
     {% endfor %}
-   
+    <h2>Reviews</h2>
+    {% if not.movie.review.all %}
+        No reviews Yet...<a href="#">
+        Add one</a>
+    {% else %}
+        {% for review in movie.reviews.all %}
+            <p>Reviews: {{ review.review_content }}</p>
+            <p>Ratings: {{ review.rating }}</p>
+        {% endfor %}
+    {% endif %}
 </div>
 
 {% endblock %}
