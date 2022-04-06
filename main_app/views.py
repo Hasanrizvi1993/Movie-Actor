@@ -43,7 +43,7 @@ class MovieList(TemplateView):
             context["header"] = "Our Movies"
         return context
 
-
+@method_decorator(login_required, name='dispatch')
 class Movie_Detail(DetailView):
     model = Movie
     template_name = "movie_detail.html"
