@@ -34,6 +34,7 @@ class Movie(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     actors = models.ManyToManyField(Actor)
     created_at = models.DateTimeField(auto_now_add=True)
+    likes = models.ManyToManyField(User, related_name='movie_likes')
     
     
     def __str__(self):
