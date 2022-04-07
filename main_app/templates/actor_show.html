@@ -6,12 +6,14 @@
 <div>
     <div>
         <img src="{{actor.img}}" alt="{{actor.name}}">
+        <br/><br/>
         <span>Name: {{ actor.name }}</span>
         <p>Gender: {{ actor.gender }}</p>
         <p>Age: {{ actor.age }}</p>
         <p>Awards: {{ actor.awards }}</p>
         <p>Spouse: {{ actor.spouse }}</p>
         <p>Birth Place: {{ actor.birth_place }}</p>
+        <hr>
         <h3>Movies {{ actor.name }} featured in</h3>
         {% for movie in actor.movie_set.all %}
             <p>{{movie.title}}</p>
@@ -21,6 +23,7 @@
         <div>
             <a href="{% url 'actors_update' actor.id %}">Edit Actor</a>
             <a href="{% url 'actors_delete' actor.id %}">Delete Actor</a>
+            <br/><br/>
         </div>
     </div>
 </div>

@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<h1>{{ username }}'s collection:</h1>
+<h1>{{ username }}'s Movies collection:</h1>
 
 {% for movie in movies %}
 <a href="/movies/{{ movie.id }}">
@@ -13,6 +13,7 @@
 <div>
     <a href="{% url 'movie_update' movie.pk %}">Update</a>
     <a href="{% url 'movie_delete' movie.pk %}">Delete</a>
+    <br/><br/>
 </div>
 {% endfor %}
 

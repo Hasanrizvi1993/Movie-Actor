@@ -13,8 +13,8 @@
     <h1>{{header}}</h1>
     {% for movie in movies %}
     <img src="{{movie.img}}" alt="{{movie.title}}">
-    <h3>Title: {{movie.title}}</h3>
-    <h3>Release Year: {{movie.release_year}}</h3>
+    <h3>{{movie.title}}</h3>
+    <h3>Release year: {{movie.release_year}}</h3>
     <h3>Genre: {{movie.genre}}</h3>
     <a href="{% url 'movie_detail' movie.pk %}">Details</a>
     <p>Added By: 
