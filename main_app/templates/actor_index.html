@@ -2,25 +2,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Actors List</h1>
+<h1>Actors</h1>
 
 {% for actor in actors %}
-    <div>
-        <div class="card-content">
-            <img src="{{actor.img}}" alt="{{actor.name}}">
+
+    <ul class="collection">
+        <li class="collection-item avatar">
+            <img src="{{actor.img}}" alt="{{actor.name}}" class="circle">
             <br/><br/>
-            <a href="{% url 'actors_show' actor.id %}">{{ actor.name }} details</a>
-                <br/><br/>
-                <span>{{ actor.name }}</span>
+            <span class="title">{{ actor.name }}</span>
                 <p>Gender: {{ actor.gender }}</p>   
                 <p>Age: {{ actor.age }}</p>
                 <p>Awards: {{ actor.awards }}</p>
                 <p>Spouse: {{ actor.spouse }}</p>
                 <p>Birth Place: {{ actor.birth_place }}</p>
-                <br/>
-            </div>
-        
-    </div>
+                <a href="{% url 'actors_show' actor.id %}" class="secondary-content">{{ actor.name }} details</a><i class="material-icons"></i></a>
+            </li>
 {% endfor %}
 
 {% endblock %}

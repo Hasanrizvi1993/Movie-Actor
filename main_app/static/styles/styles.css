@@ -1,5 +1,16 @@
 body{
-    max-width: 900px;
+    max-width: 800px;
     margin: auto;
     text-align: center;
+    background-color: black;
+    color: lightseagreen;
+}
+
+
+img{
+    width: 300px;
+}
+
+#actor-form-container, #update-actor-form, #signup-form, #login-form, #movie-form, #movie-update{
+    background-color: white;
 }

@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
-
+{% load materializecss %}
 {% block content %}
+<div id="actor-form-container">
     <form action="" method="post">
         {% csrf_token %}
         <table>
+            <div class="input-field">
             {{ form.as_table }}
+            </div>
         </table>
-        <input type="submit" value="Submit!">
+        <button class="btn btn-secondary" style="max-width: max-content;
+        margin: auto;">Add an Actor</button>
     </form>
+</div>
 {% endblock %}

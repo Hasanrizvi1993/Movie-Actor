@@ -11,15 +11,26 @@
         <a href="{% url 'movie_create' %}">Add Movie</a>
     </form>
     <h1>{{header}}</h1>
-    {% for movie in movies %}
-    <img src="{{movie.img}}" alt="{{movie.title}}">
-    <h3>{{movie.title}}</h3>
-    <h3>Release year: {{movie.release_year}}</h3>
-    <h3>Genre: {{movie.genre}}</h3>
-    <a href="{% url 'movie_detail' movie.pk %}">Details</a>
-    <p>Added By: 
-        <a href='/user/{{movie.user.username}}'>{{movie.user.username}}</a>
-    </p>
-    {% endfor %}
+    <div class="row">
+        {% for movie in movies %}
+              <div class="card">
+                <div class="card-image">
+                    <img id="movieimage" src="{{movie.img}}" alt="{{movie.title}}">
+                    <br/>
+                    <span class="card-title">{{movie.title}}</span>
+                        <div class="card-content">
+                            <h5>Release year: {{movie.release_year}}</h5>
+                            <h5>Genre: {{movie.genre}}</h5>
+                                <div class="card-action">
+                                    <a href="{% url 'movie_detail' movie.pk %}">Details</a>
+                                    <p>Added By: 
+                                        <a href='/user/{{movie.user.username}}'>{{movie.user.username}}</a>
+                                    </p>
+                                </div>
+                            </div>
+                          </div>
+                          </div>
+                          </div>
 
+{% endfor %}
 {% endblock %}

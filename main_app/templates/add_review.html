@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
+{% load materializecss %}
 {% block title %}Review on Movies{% endblock %}
 {% block content %}
+<div style="background-color: white; color: black; left: 50%; max-width: max-content;
+margin: auto;">
     <h1>Add a Review</h1>
     <div class="form-group">
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-secondary">Add Review</button>
+        {{ form|materializecss }}
+        <button class="btn btn-secondary" style="max-width: max-content;
+        margin: auto;">Add Review</button>
     </div>
     </form>
+</div>
 {% endblock %}
