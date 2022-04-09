@@ -14,3 +14,7 @@ img{
 #actor-form-container, #update-actor-form, #signup-form, #login-form, #movie-form, #movie-update{
     background-color: white;
 }
+
+#review-box{
+    border: 5px solid white;
+}

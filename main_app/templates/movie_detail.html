@@ -10,11 +10,11 @@
     <h3>Release Year: {{movie.release_year}}</h3>
     <h3>Genre: {{movie.genre}}</h3>
     <br/><br/>
-    <hr>
     <form action="{% url 'like_movie' movie.pk %}" method="POST">
         {% csrf_token %}
         <button type="submit", name="movie_id", value="{{ movie.id }}", class="btn btn-primary btn-sm">Like</button> - {{ total_likes }} Likes
     </form>
+    <hr>
 
 
     {% for actor in movie.actors.all %}
@@ -29,7 +29,10 @@
     {% empty %}
         <div>sorry no actors listed :/</div>
     {% endfor %}
+    <br/>
+    <div id="review-box">
     <h2>Reviews</h2>
+    <hr>
     {% if not movie.reviews.all %}
         No reviews Yet...<a href="{% url 'add_review' movie.pk %}">
         Add Review</a>
@@ -39,8 +42,10 @@
         {% for review in movie.reviews.all %}
             <p>Reviews: {{ review.review_content }}</p>
             <p>Ratings: {{ review.rating }}</p>
+        <hr>
         {% endfor %}
     {% endif %}
+    </div>
 </div>
 
 {% endblock %}
