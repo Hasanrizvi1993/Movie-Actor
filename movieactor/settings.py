@@ -17,6 +17,7 @@ import socket
 import psycopg2
 import dj_database_url
 
+
 # load_dotenv()
 DATABASE_URL = os.environ['DATABASE_URL']
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
@@ -52,7 +53,8 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # DEBUG = True
 
 ALLOWED_HOSTS = [
-    'movie-actor.herokuapp.com'
+    'movie-actor.herokuapp.com',
+    # 'localhost'
 ]
 
 
@@ -113,7 +115,7 @@ DATABASES = {
     }
 }
 #comment this out when working on local
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
