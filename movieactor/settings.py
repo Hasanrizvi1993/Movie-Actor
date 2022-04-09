@@ -158,9 +158,5 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< HEAD
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'
-=======
-LOGIN_URL = '/login'
->>>>>>> backupbranch
