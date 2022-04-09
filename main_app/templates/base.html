@@ -5,16 +5,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- we can put any cdns, scripts, or css here -->
     <!-- in our html head tag add the following  -->
+    <!-- Compiled and minified CSS -->
+    {% block css %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css" integrity="sha256-qj3p6P1fJIV+Ndv7RW1ovZI2UhOuboj9GcODzcNFIN8=" crossorigin="anonymous" />
+    {% endblock css %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    
+
     <link rel="stylesheet" href="{% static 'styles/styles.css' %}" />
     <script src="{% static 'scripts/app.js' %}" defer></script>
 
-    <title>Movie-Actor</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-  {% block content %}  
+  <nav class="#d50000 red accent-4">
+    {% if user.is_authenticated %}
+        <span><a href="{% url 'profile' user.username %}">Hello, {{ user.username }}!</a></span>
+        <span> | </span>
+        <span><a href="{% url 'logout' %}">Logout</a></span>
+        <span> | </span>
+        {% else %}
+        <span><a href="{% url 'login' %}">Login</a></span>
+        <span> | </span>
+        <span><a href="{% url 'signup' %}">SignUp</a></span>
+        <span> | </span>
+        {% endif %}
+        <a href="/admin">Admin</a>
+        <span> | </span>
+        <a href="/">Home</a>
+        <span> | </span>
+        <a href="/about">About</a>
+        <span> | </span>
+        <a href="/movies">Movies</a>
+        <span> | </span>
+        <a href="/actors">Actors</a>
+        <span> | </span>
+        <a href="{% url 'movie_create' %}">Add a Movie</a>
+        <span> | </span>
+        <a href="{% url 'actors_create' %}">Add an Actor</a>
+        <span> | </span>  
+    </nav>
 
-  {% endblock %}
+    {% block content %}
+
+    {% endblock %}
+    {% block potato %}
+    {% endblock %}
+
+    {% block javascript %}
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+
+    <script>
+    $(document).ready(function(){
+
+    // Initialize materialize data picker
+    $('.datepicker').datepicker({'format': 'yyyy-mm-dd'});
+    $('select').formSelect();
+
+    });
+    </script>
+    {% endblock javascript %}    
 </body>
 </html>
+    

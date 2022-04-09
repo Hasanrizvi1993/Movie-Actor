@@ -1,3 +1,20 @@
-h1 {
-    color: green;
+body{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    background-color: black;
+    color: lightseagreen;
+}
+
+
+img{
+    width: 300px;
+}
+
+#actor-form-container, #update-actor-form, #signup-form, #login-form, #movie-form, #movie-update{
+    background-color: white;
+}
+
+#review-box{
+    border: 5px solid white;
 }

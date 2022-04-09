@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load materializecss %} 
+
+{% block content %}
+<div id="update-actor-form">
+<h1>Update {{actor.name}}</h1>
+
+<form action="" method="post">
+  {% csrf_token %} 
+  {{ form|materializecss }}
+  <button class="btn btn-secondary" style="max-width: max-content;
+        margin: auto;">Update Actor</button>
+</form>
+</div>
+
+{% endblock %}

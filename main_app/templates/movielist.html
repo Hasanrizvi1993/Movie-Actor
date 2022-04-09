@@ -1,9 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Our Movies:</h1>
-    {% for movie in movies %}
-    <h3>Name: {{movie.name}}</h3>
-    <h3>Age: {{movie.age}}</h3>
-    <h3>Gender: {{movie.gender}}</h3>
-    {% endfor %}
+    <h1>{{header}}</h1>
+    <div class="row">
+        {% for movie in movies %}
+              <div class="card">
+                <div class="card-image">
+                    <img id="movieimage" src="{{movie.img}}" alt="{{movie.title}}">
+                    <br/>
+                    <span class="card-title">{{movie.title}}</span>
+                        <div class="card-content">
+                            <h5>Release year: {{movie.release_year}}</h5>
+                            <h5>Genre: {{movie.genre}}</h5>
+                                <div class="card-action">
+                                    <a href="{% url 'movie_detail' movie.pk %}">Details</a>
+                                    <p>Added By: 
+                                        <a href='/user/{{movie.user.username}}'>{{movie.user.username}}</a>
+                                    </p>
+                                </div>
+                            </div>
+                          </div>
+                          </div>
+                          </div>
+
+{% endfor %}
 {% endblock %}
