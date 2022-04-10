@@ -78,7 +78,7 @@ class Movie_Update(UpdateView):
 @method_decorator(login_required, name='dispatch')
 class Movie_Delete(DeleteView):
     model = Movie
-    template_name = "Movie_delete_confirmation.html"
+    template_name = "movie_delete_confirmation.html"
     success_url = "/movies/"
 
 @login_required
