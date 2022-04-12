@@ -68,3 +68,19 @@ Update Movie
 
 
 
+
+App Screenshots
+
+
+Signup
+
+![Screen Shot 2022-04-11 at 7 06 23 PM](https://user-images.githubusercontent.com/88109038/162864580-1e5f483e-c5d9-4152-b421-8a3d0869dda4.png)
+
+Login 
+
+![Screen Shot 2022-04-11 at 7 06 48 PM](https://user-images.githubusercontent.com/88109038/162864619-18ac2f9b-ad6d-4c76-83b9-0a0d64dc4848.png)
+
+Homepage
+
+![Screen Shot 2022-04-11 at 7 07 12 PM](https://user-images.githubusercontent.com/88109038/162864676-bf681ce3-990d-423f-99e9-708fa12c29df.png)
+
