@@ -31,3 +31,40 @@ Signup Page
 
 Homepage
 ![Screen Shot 2022-04-11 at 7 00 52 PM](https://user-images.githubusercontent.com/88109038/162863919-c7bd5e4b-15b9-49d4-8cd7-f8b07256ab38.png)
+
+About
+
+![Screen Shot 2022-04-11 at 7 01 44 PM](https://user-images.githubusercontent.com/88109038/162864015-a0cf7a15-adfa-4201-a359-58df97da850c.png)
+
+Movie List
+
+![Screen Shot 2022-04-11 at 7 01 58 PM](https://user-images.githubusercontent.com/88109038/162864036-bf809e8d-9a15-47c9-96d5-11bd322556a7.png)
+
+Actor List
+
+![Screen Shot 2022-04-11 at 7 02 22 PM](https://user-images.githubusercontent.com/88109038/162864077-2345d488-0982-4622-bf0e-b07546a194f6.png)
+
+User Profile
+
+![Screen Shot 2022-04-11 at 7 02 39 PM](https://user-images.githubusercontent.com/88109038/162864111-c5a3a98d-4e5e-4b9d-8c41-329d416f4f12.png)
+
+Add An Actor Page
+
+![Screen Shot 2022-04-11 at 7 03 02 PM](https://user-images.githubusercontent.com/88109038/162864155-8fb2e923-0f1c-4093-ba27-349510c2cac4.png)
+
+
+Add a Movie
+
+![Screen Shot 2022-04-11 at 7 03 39 PM](https://user-images.githubusercontent.com/88109038/162864222-0f47a850-7015-4e98-b7f0-148a9c6927ef.png)
+
+
+Single Movie
+
+![Screen Shot 2022-04-11 at 7 04 26 PM](https://user-images.githubusercontent.com/88109038/162864300-888904fa-de3d-4a37-a849-61502d5f286b.png)
+
+Update Movie
+
+![Screen Shot 2022-04-11 at 7 04 53 PM](https://user-images.githubusercontent.com/88109038/162864449-07f2e9ae-585d-4049-8e62-99684c13b4ca.png)
+
+
+
