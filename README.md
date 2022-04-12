@@ -2,6 +2,14 @@
 This App is a personal collection application which allows its user to add movies and actors of their choice and 
 provide reviews for others to see. This app also allows users to like and post reviews on other users' favorite movies. 
 
+**Technologies used**
+
+Python 3.0, Django, PostgreSQL, Materialize, CSS, Django Template Language or DTL 
+
+**Deployed on Heroku**
+
+https://movie-actor.herokuapp.com/
+
 
 ERD
 
