@@ -84,3 +84,75 @@ Homepage
 
 ![Screen Shot 2022-04-11 at 7 07 12 PM](https://user-images.githubusercontent.com/88109038/162864676-bf681ce3-990d-423f-99e9-708fa12c29df.png)
 
+
+Movie List Page
+
+
+![Screen Shot 2022-04-11 at 7 08 45 PM](https://user-images.githubusercontent.com/88109038/162864848-75fdda40-f009-4dfd-9bb2-7422223f298a.png)
+
+![Screen Shot 2022-04-11 at 7 08 57 PM](https://user-images.githubusercontent.com/88109038/162864866-8729bdff-c2c4-4b5b-b043-2b95b267fc8e.png)
+
+
+Movie Detail Page
+
+![Screen Shot 2022-04-11 at 7 14 06 PM](https://user-images.githubusercontent.com/88109038/162865566-cc741afd-4c7c-484a-9b67-6fe2fde30928.png)
+![Screen Shot 2022-04-11 at 7 14 32 PM](https://user-images.githubusercontent.com/88109038/162865605-2626f156-ba38-4d5a-9efd-d67fdfab96f8.png)
+![Screen Shot 2022-04-11 at 7 14 48 PM](https://user-images.githubusercontent.com/88109038/162865629-84b63076-c2fa-4ae9-9a43-256a308849f0.png)
+
+
+
+Add a Review page
+
+![Screen Shot 2022-04-11 at 7 15 05 PM](https://user-images.githubusercontent.com/88109038/162865652-d0666a15-90fe-47b8-8d52-5ef1e35809cc.png)
+
+
+Actor List Page
+
+
+![Screen Shot 2022-04-11 at 7 09 16 PM](https://user-images.githubusercontent.com/88109038/162864898-1c5112e5-f05a-4259-88f7-b35f4c28aa0d.png)
+
+
+Actor Detail page
+
+
+![Screen Shot 2022-04-11 at 7 09 42 PM](https://user-images.githubusercontent.com/88109038/162864946-8de072d8-8027-4091-863a-64c01cb6afe5.png)
+
+
+Update Actor Page
+
+![Screen Shot 2022-04-11 at 7 09 56 PM](https://user-images.githubusercontent.com/88109038/162864974-67063213-44d8-453c-a3ef-bdc6b6615550.png)
+
+
+Delete Actor Page
+
+![Screen Shot 2022-04-11 at 7 10 15 PM](https://user-images.githubusercontent.com/88109038/162865032-951de239-f9c7-432c-a4e6-6ab3a1617926.png)
+
+
+Add a Movie
+
+![Screen Shot 2022-04-11 at 7 10 50 PM](https://user-images.githubusercontent.com/88109038/162865099-f2c6ca15-be6d-416f-9e7a-d41d793a491e.png)
+
+
+Add an Actor
+
+![Screen Shot 2022-04-11 at 7 11 37 PM](https://user-images.githubusercontent.com/88109038/162865246-6e1fa777-f79a-492d-9f99-39653fc381f4.png)
+
+About Page
+
+![Screen Shot 2022-04-11 at 7 11 51 PM](https://user-images.githubusercontent.com/88109038/162865271-cd7d0cd4-1a88-4d56-bca3-8eb13d7ba1b0.png)
+
+
+User personal Collection Page (Profile Page)
+
+![Screen Shot 2022-04-11 at 7 12 02 PM](https://user-images.githubusercontent.com/88109038/162865294-c261253a-019d-4e17-ab19-edc92259dec7.png)
+
+Update Movie Page
+
+![Screen Shot 2022-04-11 at 7 12 40 PM](https://user-images.githubusercontent.com/88109038/162865388-17a97367-ba69-4935-bfd1-f28e592472fd.png)
+
+
+Delete Movie Page
+
+![Screen Shot 2022-04-11 at 7 12 54 PM](https://user-images.githubusercontent.com/88109038/162865420-8e5c85fc-33dd-45db-a47b-073d03e2d53c.png)
+
+
